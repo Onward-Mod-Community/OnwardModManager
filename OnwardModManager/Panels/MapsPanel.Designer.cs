@@ -39,10 +39,6 @@ namespace OnwardModManager.Panels
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             gvMapsList = new DataGridView();
-            btnInstall = new Button();
-            btnMapInfo = new Button();
-            lblStatus = new Label();
-            btnSelectAll = new Button();
             colCategory = new DataGridViewTextBoxColumn();
             colInstalled = new DataGridViewCheckBoxColumn();
             colName = new DataGridViewTextBoxColumn();
@@ -50,6 +46,10 @@ namespace OnwardModManager.Panels
             colLatestVersion = new DataGridViewTextBoxColumn();
             colDescription = new DataGridViewTextBoxColumn();
             colUninstall = new DataGridViewButtonColumn();
+            btnInstall = new Button();
+            btnMapInfo = new Button();
+            lblStatus = new Label();
+            btnSelectAll = new Button();
             ((System.ComponentModel.ISupportInitialize)gvMapsList).BeginInit();
             SuspendLayout();
             // 
@@ -92,52 +92,9 @@ namespace OnwardModManager.Panels
             gvMapsList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gvMapsList.Size = new Size(981, 535);
             gvMapsList.TabIndex = 10;
+            gvMapsList.CellContentClick += gvMapsList_CellContentClick;
             gvMapsList.SelectionChanged += gvMapsList_SelectionChanged;
             gvMapsList.MouseDown += gvMapsList_MouseDown;
-            // 
-            // btnInstall
-            // 
-            btnInstall.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnInstall.Location = new Point(881, 544);
-            btnInstall.Name = "btnInstall";
-            btnInstall.Size = new Size(103, 48);
-            btnInstall.TabIndex = 6;
-            btnInstall.Text = "Install or Update";
-            btnInstall.UseVisualStyleBackColor = true;
-            btnInstall.Click += btnInstall_Click;
-            // 
-            // btnMapInfo
-            // 
-            btnMapInfo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnMapInfo.Enabled = false;
-            btnMapInfo.Location = new Point(772, 544);
-            btnMapInfo.Name = "btnMapInfo";
-            btnMapInfo.Size = new Size(103, 48);
-            btnMapInfo.TabIndex = 8;
-            btnMapInfo.Text = "Map Info";
-            btnMapInfo.UseVisualStyleBackColor = true;
-            btnMapInfo.Click += btnMapInfo_Click;
-            // 
-            // lblStatus
-            // 
-            lblStatus.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lblStatus.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(112, 544);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(654, 48);
-            lblStatus.TabIndex = 9;
-            lblStatus.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // btnSelectAll
-            // 
-            btnSelectAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnSelectAll.Location = new Point(3, 544);
-            btnSelectAll.Name = "btnSelectAll";
-            btnSelectAll.Size = new Size(103, 48);
-            btnSelectAll.TabIndex = 11;
-            btnSelectAll.Text = "Select All";
-            btnSelectAll.UseVisualStyleBackColor = true;
-            btnSelectAll.Click += btnSelectAll_Click;
             // 
             // colCategory
             // 
@@ -219,6 +176,50 @@ namespace OnwardModManager.Panels
             colUninstall.ReadOnly = true;
             colUninstall.Resizable = DataGridViewTriState.False;
             colUninstall.Width = 125;
+            // 
+            // btnInstall
+            // 
+            btnInstall.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnInstall.Location = new Point(881, 544);
+            btnInstall.Name = "btnInstall";
+            btnInstall.Size = new Size(103, 48);
+            btnInstall.TabIndex = 6;
+            btnInstall.Text = "Install or Update";
+            btnInstall.UseVisualStyleBackColor = true;
+            btnInstall.Click += btnInstall_Click;
+            // 
+            // btnMapInfo
+            // 
+            btnMapInfo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnMapInfo.Enabled = false;
+            btnMapInfo.Location = new Point(772, 544);
+            btnMapInfo.Name = "btnMapInfo";
+            btnMapInfo.Size = new Size(103, 48);
+            btnMapInfo.TabIndex = 8;
+            btnMapInfo.Text = "Map Info";
+            btnMapInfo.UseVisualStyleBackColor = true;
+            btnMapInfo.Click += btnMapInfo_Click;
+            // 
+            // lblStatus
+            // 
+            lblStatus.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblStatus.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStatus.Location = new Point(112, 544);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(654, 48);
+            lblStatus.TabIndex = 9;
+            lblStatus.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // btnSelectAll
+            // 
+            btnSelectAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnSelectAll.Location = new Point(3, 544);
+            btnSelectAll.Name = "btnSelectAll";
+            btnSelectAll.Size = new Size(103, 48);
+            btnSelectAll.TabIndex = 11;
+            btnSelectAll.Text = "Select All";
+            btnSelectAll.UseVisualStyleBackColor = true;
+            btnSelectAll.Click += btnSelectAll_Click;
             // 
             // MapsPanel
             // 
