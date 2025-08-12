@@ -221,9 +221,14 @@ namespace OnwardModManager
         {
             if (AllMods.Count == 0) return; // Dont have mods anyway
 
+
+            var bepinexFolder = Path.Combine(OnwardPath, "BepInEx");
             var pluginsPath = Path.Combine(OnwardPath, "BepInEx/plugins");
             var bepinexPath = Path.Combine(OnwardPath, "BepInEx/core/BepInEx.dll");
 
+            if (!Directory.Exists(bepinexFolder)) // Dont bother, bepinex not installed
+                return;
+            
             // Try to get BepInEx version
             if (File.Exists(bepinexPath) && !InstalledMods.ContainsKey("BepInEx"))
             {
@@ -249,6 +254,9 @@ namespace OnwardModManager
                 }
             }
 
+            if (!Directory.Exists(pluginsPath)) // Dont bother, no mods installed
+                return;
+            
             var allFiles = Directory.GetFiles(pluginsPath, "*.dll", SearchOption.AllDirectories);
             foreach (var file in allFiles)
             {
